@@ -1,5 +1,5 @@
 
-package com.pooespol.thegoodburguer;
+package modelo;
 
 public enum TipoComida {
     B,
