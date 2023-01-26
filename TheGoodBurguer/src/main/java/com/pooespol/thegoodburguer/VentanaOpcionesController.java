@@ -17,6 +17,8 @@ public class VentanaOpcionesController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * probado git
+     * 
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
