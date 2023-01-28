@@ -49,14 +49,14 @@ public class VentanaInicioController implements Initializable {
     }    
     public void cargarImagenes(){
         try{
-            Image img = new Image(new FileInputStream("src/main/resources/images/pantallaInicial.png"));
+            Image img = new Image(new FileInputStream(App.pathImg+"pantallaInicial.png"));
             imgv1.setImage(img);
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
         
         try{
-            Image img = new Image(new FileInputStream("src/main/resources/images/BurguerKawai.png"));
+            Image img = new Image(new FileInputStream(App.pathImg+"BurguerKawai.png"));
             imgv2.setImage(img);
         }catch(Exception e){
             System.out.println(e.getMessage());
