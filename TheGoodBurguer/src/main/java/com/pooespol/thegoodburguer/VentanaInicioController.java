@@ -6,13 +6,18 @@ package com.pooespol.thegoodburguer;
 
 import java.io.FileInputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import modelo.*;
 
 /**
  * FXML Controller class
@@ -24,7 +29,8 @@ public class VentanaInicioController implements Initializable {
     /**
      * Initializes the controller class.
      */
-
+    @FXML
+    private VBox root;
     @FXML
     private TextField tf1;
     
@@ -39,14 +45,61 @@ public class VentanaInicioController implements Initializable {
     
     @FXML 
     private Button btnIngresar;
+    @FXML
+    private void ingresar(ActionEvent event) throws Exception {
+        String user = tf1.getText();
+        String code = tf2.getText();
+        if (validarIngreso(user, code)) {
+            App.cliente=abrirCliente(user);
+            App.setRoot("ventanaOpciones");
+
+        } else {
+            Label l = new Label();
+            l.setText("Usuario no encontrado, intente de nuevo");
+
+            root.getChildren().add(l);
+        }
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         cargarImagenes();
-         
-        
+           
     }    
+    
+    ArrayList<Cliente> clientes = cargarClientes();
+
+    private boolean validarIngreso(String usuario, String clave) {
+        for (Cliente c : clientes) {
+            if (c.iniciarSesion(usuario, clave)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Cliente abrirCliente(String user) {
+        for (Cliente c : clientes) {
+            if (user.equals(c.getUsuario())) {
+                Cliente cliente = new Cliente(c.getUsuario(), c.getClave(), c.getNombre());
+                return cliente;
+            }
+        }
+        return null;
+    }
+
+    private ArrayList<Cliente> cargarClientes() {
+        ArrayList<Cliente> clientes = new ArrayList<>();
+        ArrayList<String> usuarios = Fichero.leer(App.pathFiles + "usuarios.txt");
+        for (String dato : usuarios) {
+            String[] line = dato.split(",");
+            Cliente c = new Cliente(line[0], line[1], line[2]);
+            clientes.add(c);
+        }
+        return clientes;
+    }
+    
     public void cargarImagenes(){
         try{
             Image img = new Image(new FileInputStream(App.pathImg+"pantallaInicial.png"));

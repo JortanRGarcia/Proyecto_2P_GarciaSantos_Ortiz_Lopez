@@ -11,10 +11,13 @@ package modelo;
 public class Cliente {
     private String usuario;
     private String clave;
+    private String nombre;
+   
 
-    public Cliente(String usuario, String clave) {
+    public Cliente(String usuario, String clave,String nombre) {
         this.usuario = usuario;
         this.clave = clave;
+        this.nombre=nombre;
     }
     
     /**
@@ -38,6 +41,9 @@ public class Cliente {
     public String getClave() {
         return clave;
     }
+    public String getNombre() {
+        return nombre;
+    }
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
@@ -45,6 +51,9 @@ public class Cliente {
 
     public void setClave(String clave) {
         this.clave = clave;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     

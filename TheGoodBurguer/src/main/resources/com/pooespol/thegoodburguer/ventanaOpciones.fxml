@@ -7,20 +7,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pooespol.thegoodburguer.VentanaOpcionesController">
    <children>
       <ImageView fx:id="imavburguer" fitHeight="400.0" fitWidth="238.0" pickOnBounds="true" preserveRatio="true" />
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="399.0" spacing="30.0">
          <children>
-            <Label fx:id="tfUusuario" text="BIENVENIDO USUARI@">
+            <Label fx:id="bienvenido">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label text="Elige la opcion que prefieras" />
-            <Button fx:id="btnEncontrar" mnemonicParsing="false" text="Encuentra el local mas cercano" />
-            <Button fx:id="btnPedir" mnemonicParsing="false" text="Haz tu pedido" />
+            <Label text="Elige la opcion que prefieras" textFill="#e30052">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></Label>
+            <Button fx:id="btnEncontrar" mnemonicParsing="false" onAction="#cambiarVentanaMapa" style="-fx-border-color: #E30052;" text="Encuentra el local mas cercano" />
+            <Button fx:id="btnPedir" mnemonicParsing="false" onAction="#cambiarVentanaPedido" style="-fx-border-color: #e30052;" text="Haz tu pedido" />
          </children>
       </VBox>
    </children>

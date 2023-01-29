@@ -16,6 +16,8 @@ public class App extends Application {
     private static Scene scene;
     public static String pathImg="src/main/resources/images/";
     public static String pathFiles="src/main/resources/files/";
+    public static Cliente cliente;
+    
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("VentanaInicio"));
