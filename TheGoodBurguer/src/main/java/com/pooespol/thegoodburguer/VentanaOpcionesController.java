@@ -39,6 +39,7 @@ public class VentanaOpcionesController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         cargarNombre();
+        cargarImagenes();
     }    
     
     @FXML
