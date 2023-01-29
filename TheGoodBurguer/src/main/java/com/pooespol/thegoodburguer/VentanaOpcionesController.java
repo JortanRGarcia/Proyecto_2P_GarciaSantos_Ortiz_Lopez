@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 /**
  * FXML Controller class
  *
@@ -24,6 +25,8 @@ import javafx.scene.image.ImageView;
 public class VentanaOpcionesController implements Initializable {
 
 
+    @FXML
+    private HBox root;
     @FXML
     private ImageView imavburguer;
     @FXML
@@ -38,8 +41,10 @@ public class VentanaOpcionesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        cargarNombre();
         cargarImagenes();
+        cargarNombre();
+        
+       
     }    
     
     @FXML
@@ -47,17 +52,20 @@ public class VentanaOpcionesController implements Initializable {
         App.setRoot("VentanaMapa");
     }
 
+    
     @FXML
     private void cambiarVentanaPedido(ActionEvent event) throws IOException {
         App.setRoot("VentanaPedido");
     }
     
     
+    
     public void cargarNombre(){
         bienvenido.setText("Bienvenido "+App.cliente.getNombre());
     
     }
-
+    
+    
     public void cargarImagenes(){
         try{
             Image img = new Image(new FileInputStream(App.pathImg+"kirBurguer.png"));
@@ -67,5 +75,4 @@ public class VentanaOpcionesController implements Initializable {
             System.out.println(e.getMessage());
         }
     }
-
 }

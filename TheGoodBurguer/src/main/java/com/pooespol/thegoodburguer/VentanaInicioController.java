@@ -51,7 +51,7 @@ public class VentanaInicioController implements Initializable {
         String code = tf2.getText();
         if (validarIngreso(user, code)) {
             App.cliente=abrirCliente(user);
-            App.setRoot("VentanaOpciones");
+            App.setRoot("ventanaOpciones");
 
         } else {
             Label l = new Label();
