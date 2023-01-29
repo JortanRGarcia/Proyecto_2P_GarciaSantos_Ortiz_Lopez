@@ -10,23 +10,20 @@ package modelo;
  * @author jorgs
  */
 public class Menu {
-    
+
     private String descripcion;
     private double precio;
     private TipoComida tipo;
+    private int cantidad;
 
-    public Menu(String descripcion, double precio, TipoComida tipo) {
+    public Menu(String descripcion, double precio, TipoComida tipo, int cantidad) {
         this.descripcion = descripcion;
         this.precio = precio;
         this.tipo = tipo;
+        this.cantidad = cantidad;
     }
-    
-    
-    
-    
-    
-    //setters y getters
 
+    //setters y getters
     public String getDescripcion() {
         return descripcion;
     }
@@ -37,6 +34,10 @@ public class Menu {
 
     public TipoComida getTipo() {
         return tipo;
+    }
+
+    public int getCantidad() {
+        return cantidad;
     }
 
     public void setDescripcion(String descripcion) {
@@ -50,5 +51,9 @@ public class Menu {
     public void setTipo(TipoComida tipo) {
         this.tipo = tipo;
     }
-    
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
 }
