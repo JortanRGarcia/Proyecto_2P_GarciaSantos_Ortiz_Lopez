@@ -129,7 +129,7 @@ public class VentanaMapaController implements Initializable {
             for (int i = 5; i >= 0; i--) {
                 int indice = i;
                 Platform.runLater(() -> {
-                    texto.setText("Tiempo para responder: " + indice + " puntos.");
+                    texto.setText("Tiempo restante: " + indice + " segundos.");
                 });
                 try {
                     Thread.sleep(1000);
@@ -169,7 +169,7 @@ public class VentanaMapaController implements Initializable {
 
             @Override
             public void handle(MouseEvent e) {
-                System.out.println(contador.getText());
+                //System.out.println(contador.getText());
                 stage.close();
             }
         });

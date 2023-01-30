@@ -22,7 +22,7 @@
             <TextField fx:id="tfdireccion" prefHeight="25.0" prefWidth="375.0" />
          </children>
       </HBox>
-      <Button fx:id="btnContinuarGracias" layoutX="231.0" layoutY="426.0" mnemonicParsing="false" onAction="#continuarGracias" text="Continuar" />
+      <Button fx:id="btnContinuar" layoutX="231.0" layoutY="426.0" mnemonicParsing="false" text="Continuar" />
       <Button fx:id="btnlimpiar" layoutX="328.0" layoutY="426.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Limpiar" />
       <Label layoutX="48.0" layoutY="40.0" text="Dirección de entrega" textFill="#fca51b">
          <font>
