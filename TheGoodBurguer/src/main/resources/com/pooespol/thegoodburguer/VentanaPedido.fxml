@@ -4,9 +4,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -45,7 +45,7 @@
                         <Label fx:id="desc1" text="Hamburguesa" />
                         <Label fx:id="p1" text="5.00" />
                         <TextField fx:id="cant1" prefHeight="25.0" prefWidth="38.0" />
-                        <Button fx:id="aHamburguesa" mnemonicParsing="false" onAction="#agregar1" text="Agregar" />
+                        <Button fx:id="ag1" mnemonicParsing="false" onAction="#agregar1" text="Agregar" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="62.0" prefWidth="331.0" spacing="20.0">
@@ -53,7 +53,7 @@
                         <Label fx:id="desc2" text="Tiramisú" />
                         <Label fx:id="p2" text="4.00" />
                         <TextField fx:id="cant2" prefHeight="25.0" prefWidth="37.0" />
-                        <Button fx:id="aTiramisu" mnemonicParsing="false" onAction="#agregar2" text="Agregar" />
+                        <Button fx:id="ag2" mnemonicParsing="false" onAction="#agregar2" text="Agregar" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="67.0" prefWidth="331.0" spacing="20.0">
@@ -61,7 +61,7 @@
                         <Label fx:id="desc3" text="Coca cola 400ml" />
                         <Label fx:id="p3" text="2.00" />
                         <TextField fx:id="cant3" prefHeight="25.0" prefWidth="37.0" />
-                        <Button fx:id="aCoca" mnemonicParsing="false" onAction="#agregar3" text="Agregar" />
+                        <Button fx:id="ag3" mnemonicParsing="false" onAction="#agregar3" text="Agregar" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="65.0" prefWidth="331.0" spacing="20.0">
@@ -69,7 +69,7 @@
                         <Label fx:id="desc4" text="Cheese fingers x5" />
                         <Label fx:id="p4" text="3.00" />
                         <TextField fx:id="cant4" prefHeight="25.0" prefWidth="40.0" />
-                        <Button fx:id="aCheese" mnemonicParsing="false" onAction="#agregar4" text="Agregar" />
+                        <Button fx:id="ag4" mnemonicParsing="false" onAction="#agregar4" text="Agregar" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="51.0" prefWidth="331.0" spacing="20.0">
@@ -77,7 +77,7 @@
                         <Label fx:id="desc5" text="Porción alitas x10" />
                         <Label fx:id="p5" text="9.00" />
                         <TextField fx:id="cant5" prefHeight="25.0" prefWidth="36.0" />
-                        <Button fx:id="aAlitas" mnemonicParsing="false" onAction="#agregar5" text="Agregar" />
+                        <Button fx:id="ag5" mnemonicParsing="false" onAction="#agregar5" text="Agregar" />
                      </children>
                   </HBox>
                </children>
@@ -93,14 +93,14 @@
                         <ComboBox prefWidth="150.0" promptText="Precio" />
                      </children>
                   </HBox>
-                  <Label text="Pedido" />
-                  <TreeTableView fx:id="tblPedido" prefHeight="243.0" prefWidth="331.0">
+                  <TableView fx:id="tblPedido" prefHeight="200.0" prefWidth="200.0">
                     <columns>
-                      <TreeTableColumn fx:id="colDescripcion" prefWidth="173.0" text="Descripción" />
-                      <TreeTableColumn fx:id="colCantidad" prefWidth="77.0" text="Cantidad" />
-                        <TreeTableColumn fx:id="colValor" prefWidth="59.0" text="Valor" />
+                      <TableColumn fx:id="colDescripcion" prefWidth="184.0" text="Descripcion" />
+                      <TableColumn fx:id="colCantidad" prefWidth="60.0" text="Cantidad" />
+                        <TableColumn fx:id="colValor" prefWidth="64.0" text="Valor" />
                     </columns>
-                  </TreeTableView>
+                  </TableView>
+                  <Label text="Pedido" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">

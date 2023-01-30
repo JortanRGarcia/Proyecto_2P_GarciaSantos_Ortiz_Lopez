@@ -13,14 +13,13 @@ public class Menu {
 
     private String descripcion;
     private double precio;
-    private TipoComida tipo;
-    private int cantidad;
+    //private TipoComida tipo;
 
-    public Menu(String descripcion, double precio, TipoComida tipo, int cantidad) {
+    public Menu(String descripcion, double precio) {
         this.descripcion = descripcion;
         this.precio = precio;
-        this.tipo = tipo;
-        this.cantidad = cantidad;
+        //this.tipo = tipo;
+
     }
 
     //setters y getters
@@ -32,13 +31,9 @@ public class Menu {
         return precio;
     }
 
-    public TipoComida getTipo() {
-        return tipo;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
+//    public TipoComida getTipo() {
+//        return tipo;
+//    }
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
@@ -48,12 +43,8 @@ public class Menu {
         this.precio = precio;
     }
 
-    public void setTipo(TipoComida tipo) {
-        this.tipo = tipo;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
+//    public void setTipo(TipoComida tipo) {
+//        this.tipo = tipo;
+//    }
 
 }

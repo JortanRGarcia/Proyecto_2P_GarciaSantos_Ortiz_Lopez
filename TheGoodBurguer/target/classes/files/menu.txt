@@ -1,5 +1,6 @@
 descripcion,precio,tipo
 hamburguesa simple,5.00,F
-tiramisú,4.00,P
+tiramisu,4.00,P
 coca cola 400ml,2.00,B
 cheese fingers x5,3.00,Q
+jarra de sangria,10.00,B

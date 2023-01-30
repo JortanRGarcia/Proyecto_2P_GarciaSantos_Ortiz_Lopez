@@ -14,3 +14,4 @@ com\pooespol\thegoodburguer\VentanaMapaController.class
 com\pooespol\thegoodburguer\VentanaOpcionesController.class
 com\pooespol\thegoodburguer\VentanaInicioController.class
 modelo\Cliente.class
+modelo\Comida.class
