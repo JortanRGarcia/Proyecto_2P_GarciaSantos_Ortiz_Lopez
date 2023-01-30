@@ -12,14 +12,20 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import modelo.Cliente;
 import modelo.Fichero;
 import modelo.*;
@@ -75,7 +81,13 @@ public class VentanaMapaController implements Initializable {
                         root.getChildren().add(imgv);
                     } catch (FileNotFoundException e) {
                     }
+                    imgv.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
+                        @Override
+                        public void handle(MouseEvent e) {
+                            localPopUp(l);
+                        }
+                    });
                 });
                 try {
                     Thread.sleep(1000);
@@ -128,6 +140,43 @@ public class VentanaMapaController implements Initializable {
 
         });
         t.start();
+    }
+    private void localPopUp(Local l) {
+        Stage stage = new Stage();
+        VBox pop = new VBox();
+        Label nombreLocal = new Label();
+        Label direccion = new Label();
+        Label horario = new Label();
+        Button salir = new Button();
+        Label contador = new Label();
+
+        pop.setStyle("-fx-background-color: pink;");
+        pop.setPrefSize(200, 200);
+        pop.setAlignment(Pos.CENTER);
+        nombreLocal.setText(l.getNombre());
+        direccion.setText(l.getDireccion());
+        horario.setText(l.getHorario());
+        salir.setText("Salir");
+        mostrarContador(contador);
+
+        pop.getChildren().addAll(nombreLocal, direccion, horario, salir, contador);
+        
+        Scene sc = new Scene(pop);
+        stage.setScene(sc);      
+        stage.show();
+        
+        salir.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent e) {
+                System.out.println(contador.getText());
+                stage.close();
+            }
+        });
+         if((contador.getText()).equals("Tiempo restante: 0 segundos.")){
+             stage.close();
+         } 
+        
     }
 
 }

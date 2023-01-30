@@ -2,15 +2,16 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.pooespol.thegoodburguer.VentanaPagoController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pooespol.thegoodburguer.VentanaPagoController">
    <children>
-      <Label layoutX="38.0" layoutY="30.0" text="Dirección de entrega" textFill="#fca51b">
+      <Label layoutX="43.0" layoutY="124.0" text="Detalle de pago" textFill="#fca51b">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -18,10 +19,18 @@
       <HBox alignment="CENTER_LEFT" layoutX="43.0" layoutY="65.0" prefHeight="59.0" prefWidth="515.0" spacing="40.0">
          <children>
             <Label text="Dirección: " />
-            <TextField prefHeight="25.0" prefWidth="375.0" />
+            <TextField fx:id="tfdireccion" prefHeight="25.0" prefWidth="375.0" />
          </children>
       </HBox>
-      <Button fx:id="btnContinuarGracias" layoutX="222.0" layoutY="342.0" mnemonicParsing="false" onAction="#continuarGracias" text="Continuar" />
-      <Button layoutX="327.0" layoutY="342.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Limpiar" />
+      <Button fx:id="btnContinuarGracias" layoutX="231.0" layoutY="426.0" mnemonicParsing="false" onAction="#continuarGracias" text="Continuar" />
+      <Button fx:id="btnlimpiar" layoutX="328.0" layoutY="426.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Limpiar" />
+      <Label layoutX="48.0" layoutY="40.0" text="Dirección de entrega" textFill="#fca51b">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rbefectivo" layoutX="48.0" layoutY="173.0" mnemonicParsing="false" onAction="#detalleEfectivo" prefHeight="26.0" prefWidth="92.0" text="Efectivo" />
+      <RadioButton fx:id="rbtarjeta" layoutX="175.0" layoutY="173.0" mnemonicParsing="false" onAction="#detalleTarjeta" prefHeight="26.0" prefWidth="132.0" text="Tarjeta de crédito" />
+      <VBox fx:id="datostarjeta" alignment="CENTER_LEFT" layoutX="21.0" layoutY="212.0" prefHeight="198.0" prefWidth="558.0" />
    </children>
 </AnchorPane>
