@@ -47,13 +47,18 @@ public class VentanaGraciasController implements Initializable {
             ex.printStackTrace();
         }
     } 
+    /**Agrega el texto de agradecimiento
+    * 
+    */
     public void agregarTexto(){
         ArrayList<String> pedido = Fichero.leer(App.pathFiles + "pedidos.txt");
             String[] datosPedido = (pedido.get(pedido.size()-1)).strip().split(",");
             textoFinal.setText("Su pedido Nro " + datosPedido[0]+" esta siendo procesado y llegará a su domicilio en 30 minutos o menos!/n"
                     + " Gracias por preferirnos. Bob esponja y Patricio harán su mejor esfuerzo <3");
     }
-    
+    /**Agrega la imagen a la ventana
+    * 
+    */    
     public void cargarImagen(){
         try{
             Image img = new Image(new FileInputStream(App.pathImg+"delivery.png"));
@@ -64,6 +69,9 @@ public class VentanaGraciasController implements Initializable {
         }
         
     }
+    /**Agrega un contador a la ventana
+    * 
+    */       
     private void agregarContador() throws IOException{
         Label contador=new Label();
         mostrarContador(contador);
@@ -73,7 +81,9 @@ public class VentanaGraciasController implements Initializable {
          } 
     }
     
-    
+    /**Agrega un contador a la ventana
+    * @param texto, asigna la funcion del contador a un label
+    */ 
     private void mostrarContador(Label texto) {
         Thread t = new Thread(() -> {
             for (int i = 5; i >= 0; i--) {

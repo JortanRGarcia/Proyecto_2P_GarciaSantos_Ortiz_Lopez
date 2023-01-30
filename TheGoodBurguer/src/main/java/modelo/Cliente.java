@@ -13,7 +13,7 @@ public class Cliente {
     private String clave;
     private String nombre;
    
-
+   
     public Cliente(String usuario, String clave,String nombre) {
         this.usuario = usuario;
         this.clave = clave;

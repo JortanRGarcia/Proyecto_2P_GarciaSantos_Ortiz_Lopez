@@ -169,16 +169,12 @@ public class VentanaPagoController implements Initializable {
             });
         }
     }
-
+    /**Genera un numero de factura aleatorio
+    * @return un numero aleatorio entre 0 y 10
+    */  
     private int generarNumFactura() {
         int numero = (int) (Math.random() * 10 + 1);
         return numero;
     }
-    /*
-     if (!tfdireccion.getText().equals("")) {
-                        Label warning = new Label();
-                        warning.setText("Debe ingresar una direccion para continuar!!!!");
-                        datostarjeta.getChildren().add(warning);
-                    }
-     */
+    
 }

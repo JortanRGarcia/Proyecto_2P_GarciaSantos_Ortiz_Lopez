@@ -69,7 +69,11 @@ public class VentanaInicioController implements Initializable {
     }    
     
     ArrayList<Cliente> clientes = cargarClientes();
-
+    /**Comprueba que el ususrio esté registrado
+    * @param usuario, recibe el usuario ingresado
+    * @param clave, recibe la clave ingresada
+    * @return boolean, si está registrado, retorna true
+    */ 
     private boolean validarIngreso(String usuario, String clave) {
         for (Cliente c : clientes) {
             if (c.iniciarSesion(usuario, clave)) {
@@ -78,7 +82,10 @@ public class VentanaInicioController implements Initializable {
         }
         return false;
     }
-
+    /**Asigna un cliente para toda la aplicacion
+    * @param user, recibe el usuario registrado
+    * @return un cliente que se asigna al programa
+    */ 
     private Cliente abrirCliente(String user) {
         for (Cliente c : clientes) {
             if (user.equals(c.getUsuario())) {
@@ -88,7 +95,9 @@ public class VentanaInicioController implements Initializable {
         }
         return null;
     }
-
+    /**Lee los archivos de clientes.txt   
+    * @return un ArrayList de tipo Cliente con todos los usuarios leídos
+    */ 
     private ArrayList<Cliente> cargarClientes() {
         ArrayList<Cliente> clientes = new ArrayList<>();
         ArrayList<String> usuarios = Fichero.leer(App.pathFiles + "usuarios.txt");
@@ -99,7 +108,9 @@ public class VentanaInicioController implements Initializable {
         }
         return clientes;
     }
-    
+    /**Carga las imagenes a la ventana
+    * 
+    */     
     public void cargarImagenes(){
         try{
             Image img = new Image(new FileInputStream(App.pathImg+"pantallaInicial.png"));

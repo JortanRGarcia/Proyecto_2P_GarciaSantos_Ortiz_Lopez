@@ -59,13 +59,17 @@ public class VentanaOpcionesController implements Initializable {
     }
     
     
-    
+    /**Carga el nombre de usuario a la ventana
+    * 
+    */  
     public void cargarNombre(){
         bienvenido.setText("Bienvenido "+App.cliente.getNombre());
     
     }
     
-    
+    /**Carga las imagenes a la ventana
+    * 
+    */  
     public void cargarImagenes(){
         try{
             Image img = new Image(new FileInputStream(App.pathImg+"kirBurguer.png"));

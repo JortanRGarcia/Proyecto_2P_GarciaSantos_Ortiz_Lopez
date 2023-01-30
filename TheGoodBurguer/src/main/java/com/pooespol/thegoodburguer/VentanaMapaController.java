@@ -60,7 +60,9 @@ public class VentanaMapaController implements Initializable {
     }
 
     ArrayList<Local> locales = cargarLocales();
-
+    /**Agrega los locales utilizando threads
+    * 
+    */ 
     public void agregarLocales() {
 
         Thread t = new Thread(() -> {
@@ -100,7 +102,9 @@ public class VentanaMapaController implements Initializable {
         t.start();
 
     }
-
+    /**Lee los archivos de locales.txt   
+    * @return un ArrayList de tipo Locales con todos los locales leídos
+    */ 
     public ArrayList<Local> cargarLocales() {
 
         ArrayList<Local> locales = new ArrayList<>();
@@ -112,7 +116,9 @@ public class VentanaMapaController implements Initializable {
         }
         return locales;
     }
-
+    /**Carga el mapa a la ventana
+    * 
+    */  
     public void agregarMapa() {
         try {
             FileInputStream f1 = new FileInputStream(App.pathImg + "mapa.png");
@@ -123,7 +129,9 @@ public class VentanaMapaController implements Initializable {
 
         }
     }
-
+    /**Agrega un contador a la ventana
+    * @param texto, asigna la funcion del contador a un label
+    */ 
     private void mostrarContador(Label texto) {
         Thread t = new Thread(() -> {
             for (int i = 5; i >= 0; i--) {
@@ -141,6 +149,9 @@ public class VentanaMapaController implements Initializable {
         });
         t.start();
     }
+    /**Crea pop ups de información sobre locales
+    * @param l, recibe un local para obtener la información
+    */ 
     private void localPopUp(Local l) {
         Stage stage = new Stage();
         VBox pop = new VBox();
